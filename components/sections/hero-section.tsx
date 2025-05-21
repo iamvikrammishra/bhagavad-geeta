@@ -22,7 +22,7 @@ export function HeroSection() {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * quotes.length);
       setQuote(quotes[randomIndex]);
-    }, 7000);
+    }, 5000);
     
     return () => clearInterval(interval);
   }, []);
