@@ -130,23 +130,23 @@ export default function TalkToArjunaPage() {
   };
 
   return (
-    <div className="container max-w-4xl py-12">
-      <div className="mx-auto mb-8 max-w-3xl text-center">
-        <h1 className="font-poppins text-3xl font-bold sm:text-4xl">Talk to Arjuna</h1>
-        <p className="mt-3 text-muted-foreground">
+    <div className="container px-4 py-6 sm:py-12 max-w-4xl">
+      <div className="mx-auto mb-6 sm:mb-8 max-w-3xl text-center">
+        <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold">Talk to Arjuna</h1>
+        <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground">
           Share your concerns and receive guidance based on the timeless wisdom of the Bhagavad Gita
         </p>
       </div>
       
       <Card className="mx-auto border-2">
-        <CardHeader className="bg-primary/5 border-b">
+        <CardHeader className="bg-primary/5 border-b p-4 sm:p-6">
           <div className="flex items-center">
-            <Avatar className="h-10 w-10 mr-3">
+            <Avatar className="h-8 w-8 sm:h-10 sm:w-10 mr-3">
               <AvatarFallback className="bg-primary text-primary-foreground">A</AvatarFallback>
             </Avatar>
             <div>
-              <CardTitle>Arjuna</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-lg sm:text-xl">Arjuna</CardTitle>
+              <CardDescription className="text-sm">
                 Guided by Bhagavad Gita wisdom
               </CardDescription>
             </div>
@@ -154,7 +154,7 @@ export default function TalkToArjunaPage() {
         </CardHeader>
         
         <CardContent className="p-0">
-          <div className="h-[500px] overflow-y-auto p-6">
+          <div className="h-[60vh] sm:h-[500px] overflow-y-auto p-4 sm:p-6">
             <AnimatePresence>
               {messages.map((message) => (
                 <motion.div
@@ -168,32 +168,32 @@ export default function TalkToArjunaPage() {
                   )}
                 >
                   {message.type === 'arjuna' && (
-                    <Avatar className="mt-1 mr-3 h-8 w-8 flex-shrink-0">
+                    <Avatar className="mt-1 mr-2 sm:mr-3 h-6 w-6 sm:h-8 sm:w-8 flex-shrink-0">
                       <AvatarFallback className="bg-primary text-primary-foreground">A</AvatarFallback>
                     </Avatar>
                   )}
                   
                   <div
                     className={cn(
-                      "rounded-lg px-4 py-3 max-w-[80%]",
+                      "rounded-lg px-3 sm:px-4 py-2 sm:py-3 max-w-[85%] sm:max-w-[80%]",
                       message.type === 'user' 
                         ? "bg-primary text-primary-foreground" 
                         : "bg-muted"
                     )}
                   >
-                    <p className="text-sm">{message.content}</p>
+                    <p className="text-sm sm:text-base">{message.content}</p>
                     {message.type === 'arjuna' && (
-                      <div className="mt-3 flex items-center gap-3">
-                        <Button variant="ghost" size="sm" className="h-7 px-2">
-                          <ThumbsUp className="h-3.5 w-3.5 mr-1" />
+                      <div className="mt-2 sm:mt-3 flex flex-wrap items-center gap-2 sm:gap-3">
+                        <Button variant="ghost" size="sm" className="h-7 px-2 text-xs sm:text-sm">
+                          <ThumbsUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1" />
                           Helpful
                         </Button>
-                        <Button variant="ghost" size="sm" className="h-7 px-2">
-                          <ThumbsDown className="h-3.5 w-3.5 mr-1" />
+                        <Button variant="ghost" size="sm" className="h-7 px-2 text-xs sm:text-sm">
+                          <ThumbsDown className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1" />
                           Not helpful
                         </Button>
-                        <Button variant="ghost" size="sm" className="h-7 px-2">
-                          <BookOpen className="h-3.5 w-3.5 mr-1" />
+                        <Button variant="ghost" size="sm" className="h-7 px-2 text-xs sm:text-sm">
+                          <BookOpen className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1" />
                           Learn more
                         </Button>
                       </div>
@@ -201,7 +201,7 @@ export default function TalkToArjunaPage() {
                   </div>
                   
                   {message.type === 'user' && (
-                    <Avatar className="ml-3 mt-1 h-8 w-8 flex-shrink-0">
+                    <Avatar className="ml-2 sm:ml-3 mt-1 h-6 w-6 sm:h-8 sm:w-8 flex-shrink-0">
                       <AvatarFallback className="bg-accent text-accent-foreground">U</AvatarFallback>
                     </Avatar>
                   )}
@@ -214,10 +214,10 @@ export default function TalkToArjunaPage() {
                   animate={{ opacity: 1 }}
                   className="flex items-start"
                 >
-                  <Avatar className="mt-1 mr-3 h-8 w-8 flex-shrink-0">
+                  <Avatar className="mt-1 mr-2 sm:mr-3 h-6 w-6 sm:h-8 sm:w-8 flex-shrink-0">
                     <AvatarFallback className="bg-primary text-primary-foreground">A</AvatarFallback>
                   </Avatar>
-                  <div className="bg-muted rounded-lg px-4 py-3">
+                  <div className="bg-muted rounded-lg px-3 sm:px-4 py-2 sm:py-3">
                     <div className="flex space-x-1">
                       <div className="h-2 w-2 animate-bounce rounded-full bg-primary/40"></div>
                       <div className="h-2 w-2 animate-bounce rounded-full bg-primary/40" style={{ animationDelay: '0.2s' }}></div>
@@ -232,16 +232,16 @@ export default function TalkToArjunaPage() {
           </div>
         </CardContent>
         
-        <div className="p-4 border-t bg-secondary/20">
+        <div className="p-3 sm:p-4 border-t bg-secondary/20">
           {showSuggestions && messages.length < 3 && (
-            <div className="mb-4">
-              <p className="text-sm font-medium mb-2">Suggested topics:</p>
-              <div className="flex flex-wrap gap-2">
+            <div className="mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm font-medium mb-2">Suggested topics:</p>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {suggestions.map((suggestion, index) => (
                   <Badge 
                     key={index}
                     variant="outline"
-                    className="cursor-pointer hover:bg-accent transition-colors py-1.5"
+                    className="cursor-pointer hover:bg-accent transition-colors py-1 px-2 text-xs sm:text-sm"
                     onClick={() => handleSuggestionClick(suggestion)}
                   >
                     {suggestion}
@@ -253,34 +253,29 @@ export default function TalkToArjunaPage() {
           )}
           
           <div className="flex gap-2">
-            <Button variant="outline" size="icon" className="flex-shrink-0">
-              <Mic className="h-5 w-5" />
+            <Input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Type your message..."
+              className="flex-1 text-sm sm:text-base"
+            />
+            <Button 
+              onClick={handleSendMessage}
+              size="icon"
+              className="shrink-0"
+            >
+              <Send className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
-            <div className="relative flex-1">
-              <Input
-                placeholder="Type your question or concern..."
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className="pr-10"
-              />
-              <Button 
-                size="icon" 
-                variant="ghost" 
-                className="absolute right-0 top-0 h-full"
-                onClick={handleSendMessage}
-                disabled={!inputValue.trim()}
-              >
-                <Send className="h-5 w-5" />
-              </Button>
-            </div>
+            <Button 
+              variant="outline"
+              size="icon"
+              className="shrink-0"
+            >
+              <Mic className="h-4 w-4 sm:h-5 sm:w-5" />
+            </Button>
           </div>
         </div>
-        
-        <CardFooter className="flex justify-between border-t p-4 text-xs text-muted-foreground">
-          <p>Your conversations are private and secure</p>
-          <p>Based on Bhagavad Gita teachings</p>
-        </CardFooter>
       </Card>
     </div>
   );
